@@ -230,7 +230,7 @@ export class LoadingScene extends SceneBase {
     this.loadAtlas("pb_particles", "effects");
     this.loadImage("evo_sparkle", "effects");
     this.loadAtlas("tera_sparkle", "effects");
-    this.load.video("evo_bg", "images/effects/evo_bg.mp4", true);
+    //this.load.video("evo_bg", "images/effects/evo_bg.mp4", true);
 
     this.loadAtlas("pb", "");
     this.loadAtlas("items", "");

@@ -6,6 +6,7 @@ import BBCodeTextPlugin from "phaser3-rex-plugins/plugins/bbcodetext-plugin";
 import InputTextPlugin from "phaser3-rex-plugins/plugins/inputtext-plugin";
 import TransitionImagePackPlugin from "phaser3-rex-plugins/templates/transitionimagepack/transitionimagepack-plugin";
 import { initI18n } from "./plugins/i18n";
+import { PokerogueRL } from "./reinforcement-learning/pokerogue-rl";
 
 // Catch global errors and display them in an alert so users can report the issue.
 window.onerror = (_message, _source, _lineno, _colno, error) => {
@@ -104,6 +105,8 @@ const startGame = async (manifest?: any) => {
   }
 };
 
+(window as any).rlModule = new PokerogueRL();
+
 fetch("/manifest.json")
   .then(res => res.json())
   .then(jsonResponse => {
@@ -113,5 +116,4 @@ fetch("/manifest.json")
     // Manifest not found (likely local build)
     startGame();
   });
-
 export default game;
